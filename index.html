@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOBAID Mining Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo-area">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <h1>JOBAID <span class="badge">MINER v2.4</span></h1>
+            </div>
+            <button id="walletBtn" class="wallet-btn disconnected">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12a2 2 0 0 0 2 2h14v-4"/><path d="M18 12a2 2 0 0 0-2 2c0 1.1.9 2 2 2h4v-4h-4z"/></svg>
+                <span id="walletStatusText">Connect Wallet</span>
+            </button>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="main-content">
+            <!-- Mining Stats Card -->
+            <section class="mining-card">
+                <div class="mining-header">
+                    <h2>Active Mining Pool</h2>
+                    <span class="status-pill offline" id="miningStatusPill">Idle</span>
+                </div>
+                
+                <div class="balance-display">
+                    <span class="label">Mined Balance</span>
+                    <div class="amount-row">
+                        <h3 id="minedBalance">0.000000</h3>
+                        <span class="currency">JBD</span>
+                    </div>
+                    <p class="usd-approx">≈ $0.00 USD</p>
+                </div>
+
+                <div class="hashrate-row">
+                    <div class="stat-box">
+                        <span class="stat-label">Hash Rate</span>
+                        <span class="stat-val" id="hashRate">0 KH/s</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Efficiency</span>
+                        <span class="stat-val">99.8%</span>
+                    </div>
+                </div>
+
+                <button id="mineToggleBtn" class="primary-btn" disabled>
+                    Start Mining
+                </button>
+            </section>
+
+            <!-- Network & Stats Grid -->
+            <section class="stats-grid">
+                <!-- Interconnected Wallets -->
+                <div class="stat-card">
+                    <div class="card-icon blue">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <div class="card-info">
+                        <span class="stat-title">Interconnected Wallets</span>
+                        <h4 id="interconnectedCount">1,248</h4>
+                        <span class="stat-trend positive">+12 today</span>
+                    </div>
+                </div>
+
+                <!-- Referral Count -->
+                <div class="stat-card">
+                    <div class="card-icon orange">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg>
+                    </div>
+                    <div class="card-info">
+                        <span class="stat-title">Referral Count</span>
+                        <h4 id="referralCount">14</h4>
+                        <span class="stat-trend positive">Tier 2 Active</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Referral Share Section -->
+            <section class="referral-box">
+                <h3>Your Referral Link</h3>
+                <div class="link-copy-row">
+                    <input type="text" readonly id="refLinkInput" value="https://jobaid.miner/ref?id=JOBAID_9824">
+                    <button id="copyRefBtn" class="icon-btn" aria-label="Copy Link">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 JOBAID Mining Protocol. Secure & Decentralized.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
